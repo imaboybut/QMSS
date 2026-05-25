@@ -1,0 +1,79 @@
+
+# System
+run_id: null  # from args
+computer: null  # from socket.gethostname()
+
+# Setup
+dataset: imagenet  # from args
+arch: null  # from args
+n_epochs: 100  # from args
+batch_size: 256  # from args
+
+# Efficiency
+use_amp: false
+
+# Optimizer
+optimizer: "SGD"
+learning_rate: "(ContinueCosine, 0.01)"
+n_epochs_warmup: null
+momentum: 0.9
+weight_decay: 0.0001
+
+# Strategya
+strategy: null # from args
+pruning_selector: null
+
+# Retraining
+phase: null
+n_phases: null
+n_epochs_per_phase: null
+retrain_schedule: CLR
+
+# Ensemble
+ensemble_method: null
+ensemble_by: null
+split_val: null
+split_id: null
+k_splits_per_ensemble: null
+n_splits_total: null
+bn_recalibration_frac: null
+
+# Quantization
+a_mode: lsq
+a_bit: 4
+a_per_channel: false
+a_symmetric: false
+a_all_positive: true
+
+w_mode: lsq
+w_bit: 4
+w_per_channel: true
+w_symmetric: false
+w_all_positive: false
+
+excepts: null
+
+
+QWeightFlag: true
+QActFlag: true
+
+baseline: false
+
+
+weight_levels: 16
+act_levels: 16
+use_hessian: true 
+
+
+bkwd_scaling_factorW: 0.0
+bkwd_scaling_factorA: 0.0
+
+lr_scheduler_m : cosine
+lr_scheduler_q : cosine
+lr_m: 0.01
+lr_q: 0.00001
+
+optimizer_m : "SGD"
+optimizer_q : "SGD"
+
+log_dir: "./results/ResNet18_CIFAR10/W1A1/"

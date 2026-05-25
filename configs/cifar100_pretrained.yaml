@@ -1,0 +1,54 @@
+# configs/cifar10.yaml
+# System
+run_id: null  # from args
+computer: null  # from socket.gethostname()
+
+# Setup
+dataset: null  # from args
+arch: null  # from args
+n_epochs: null  # from args
+batch_size: null  # from args
+
+# Efficiency
+use_amp: false
+
+# Optimizer
+optimizer: "SGD"
+learning_rate: "(Linear, 0.1)"
+n_epochs_warmup: null
+momentum: 0.9
+weight_decay: 0.0002
+
+# Strategy
+strategy: "Dense"
+pruning_selector: null
+
+# Retraining
+phase: null
+n_phases: null
+n_epochs_per_phase: null
+retrain_schedule: null
+
+# Ensemble
+ensemble_method: null
+ensemble_by: null
+split_val: null
+split_id: null
+k_splits_per_ensemble: null
+n_splits_total: null
+bn_recalibration_frac: null
+
+# Quantization
+a_mode: lsq
+a_bit: null
+a_per_channel: null
+a_symmetric: null
+a_all_positive: null
+
+w_mode: lsq
+w_bit: null
+w_per_channel: null
+w_symmetric: null
+w_all_positive: null
+
+excepts: "conv1,fc,linear"

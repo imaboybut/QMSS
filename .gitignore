@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.DS_Store
+.ipynb_checkpoints/
+
+# logs / outputs
+logs/
+runs/
+outputs/
+wandb/
+tensorboard/
+*.log
+
+# datasets / checkpoints
+data/
+datasets/
+checkpoints/
+ckpt/
+weights/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# env
+.env
+.venv/
+venv/
